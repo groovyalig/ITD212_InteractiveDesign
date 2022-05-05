@@ -1,0 +1,17 @@
+<html>
+	<body>
+	
+		<div id="div1"></div>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		
+		<script>
+			fetch('http://www.omdbapi.com/?apikey=b174b83&t=star+wars&plot=full&rj=json')
+			.then(function(response){return response.json();})
+			.then(function(json){
+				dataPlot = json.Plot;
+				document.getElementById("div1").textContent = dataPlot; 
+			});
+		</script>
+	</body>
+</html>

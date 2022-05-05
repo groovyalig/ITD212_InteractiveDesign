@@ -1,0 +1,18 @@
+<html>
+	<body>
+		<div id="courseName"></div>
+		
+		<div id="courseId"></div>
+		
+		<div id="courseCampus"></div>
+		
+		<script>
+		var courseJSON = '{ "name":"Interactive Web", "id":"ITD 212", "campus":"VB" }';
+		var parsedJSON = JSON.parse(courseJSON);
+		document.getElementById("courseName").innerHTML = parsedJSON.name;
+		document.getElementById("courseId").innerHTML = parsedJSON.id;
+		document.getElementById("courseCampus").innerHTML = parsedJSON.campus;
+		</script>
+		
+	</body>
+</html>

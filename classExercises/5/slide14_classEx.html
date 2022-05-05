@@ -1,0 +1,15 @@
+<html>
+	<body>
+		
+		<div id="div1"></div>
+		
+		<script>
+			//creating the string and converting it to JSON
+			var obj = { "professsor":"Johnson", "department":"CSC"} ;
+			var convObj = JSON.stringify(obj) ;
+			
+			//adding the JSON object to a div on the document
+			document.getElementById("div1").textContent = convObj ;
+		</script>
+	</body>
+</html>

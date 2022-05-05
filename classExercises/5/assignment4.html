@@ -1,0 +1,24 @@
+<html>
+	<body>
+	
+		<div id="div1"></div>
+		<script src=""></script>
+		
+		<script>
+			fetch('http://www.omdbapi.com/?apikey=b174b83&t=star+wars&plot=full&rj=json')
+			.then(function(response){return response.json();})
+			.then(function(json){
+				dataYear = json.Year;
+				document.getElementById("div1").textContent = dataYear; 
+			});
+		</script>
+		
+		
+		<div id="div1"></div>
+		
+		<script>
+			sessionStorage.setItem("username","asmith");
+		</script>
+		
+	</body>
+</html>

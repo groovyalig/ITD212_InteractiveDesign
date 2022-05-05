@@ -1,0 +1,25 @@
+<html>
+	<body>
+		<div id="movieTitle"></div>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		
+		<script>
+			//variable to hold the plot of the movie
+			var dataTitle;
+			
+			//using a GET request to access API
+			fetch('http://www.omdbapi.com/?apikey=b174b83&t=star+wars&plot=full&rj=json')
+			
+			//.then represents a promise, it'll be executed after something happens, 
+			//make the request & as soon as you get the response, return it as a JSON obj
+			.then(function(response) {return response.json();})
+			
+			//automatically creating json that was returned as a response 
+			.then(function(json) {
+				dataTitle = json.Title;
+				document.getElementById('movieTitle').innerHTML = dataTitle;
+			});
+		</script>
+	</body>
+</html>

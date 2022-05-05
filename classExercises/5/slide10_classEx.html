@@ -1,0 +1,23 @@
+<html>
+	<body>
+		
+		<button id="btnClick">Click</button>
+		<p id="p1"></p>
+		
+		<script>
+			//Creating the string/object & parsing it, saving the parsed version as a variable
+			var personJSON = '{ "name":"Ben", "age":"28","occupation":"Developer" }';
+			var parsedJSON = JSON.parse(personJSON);
+			
+			//Adding event listener to the button so that it performs a function when clicked
+			document.getElementById("btnClick").addEventListener("click", displayJSON);
+			
+			//function that fills p1 with info from parsed object
+			function displayJSON() {
+				document.getElementById("p1").textContent = parsedJSON.name + " " +  parsedJSON.age + " " + parsedJSON.occupation;
+			}
+			
+		</script>
+		
+	</body>
+</html>
