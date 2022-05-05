@@ -1,0 +1,33 @@
+<html>
+	<body>
+		<h3>Enter the following to get a location JSON</h3>
+		Enter Address:<br>
+		<input type="text" id="txtAddress"><br>
+		Enter City/State (Only place a space between the city and state):<br>
+		<input type="text" id="txtCity"><br>
+		<button id="driver">Get Location</button>
+		<div id="locationDiv"></div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+		var street;
+		var cityState;
+		var address;
+				
+		var apiKey = '55e314a3395fa3cc1fe91ad8ca8d55a5a95e8df';
+				
+		$("#driver").click(function(event){
+		street = $("#txtAddress").val();
+		cityState = $("#txtCity").val();
+		address = street + ', ' + cityState;	
+		
+		fetch('https://api.geocod.io/v1/geocode?q='+ encodeURIComponent(address) +'&api_key=' + encodeURIComponent(apiKey))
+				.then(function(response) {return response.json();})
+				.then(function(json) {
+					dataLat = json.results[0].location.lat;
+					dataLong = json.results[0].location.lng;
+					document.getElementById("locationDiv").innerHTML = "Lat: " + dataLat + " Long: " + dataLong;
+				}); //end fetch
+		}); //end .click
+    		</script>
+	</body>
+</html>
