@@ -1,0 +1,23 @@
+<html>
+	<body>
+		<div id="div1">
+			<ol id="foodList"></ol>
+			
+			<input type="text" id="txtFood"></input>
+			<button id="btnAdd">Add Item</button>	
+		</div>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+			</script>
+			
+		<script>
+			$("#foodList").append("<li>Pizza</li>");
+			$("#foodList").append("<li>Steak</li>");
+			$("#foodList").append("<li>Ice Cream</li>");
+			$("#btnAdd").click(function(){
+				var food = "<li>" + $('#txtFood').val() + "</li>";
+				$("#foodList").append(food);
+				$("#txtFood").val("");
+				});
+		</script>
+	</body>
+</html>

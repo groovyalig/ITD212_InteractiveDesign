@@ -1,0 +1,20 @@
+<html>
+	<body>
+		<button id="btnClick">Click</button>
+		<button id="btnHide">Hide</button>
+		<p id="p1"><i></i></p>
+		
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+		</script>
+	
+		<script>
+			$("#btnClick").click(function(){
+			$("#p1").html("p1 text");
+			$("#p1").show();});			//you could also use {$("#p1").text("...");}
+			
+			$("#btnHide").click(function(){
+			$("#p1").hide();});
+		</script>
+	</body>
+</html>

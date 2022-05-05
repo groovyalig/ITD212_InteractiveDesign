@@ -1,0 +1,50 @@
+<html>
+	<body onload="loadDiv()">
+		
+		<!-- Code for Question #2 --------------------------------------------------------------
+		<div id="nameHolder"></div>
+		<button id="btnName">Display Name</button>
+		-->
+		
+		<!-- Code for Question #4 --------------------------------------------------------------
+		<div id="pBox"></div>-->
+		
+		<!-- Code for Quesiton #8-->
+		<div id="bigDiv"> </div>
+		
+		<script>			
+			
+			//Code for Quesiton #2 --------------------------------------------------------------
+			/*document.getElementById("btnName").addEventListener("click", displayName);
+			
+			function displayName(){
+				var newElement = document.createElement("p");
+					newElement.innerHTML = "<h3>Alissa</h3>" ;
+				document.getElementById("nameHolder").append(newElement);
+			}*/
+			
+			//Code for Question #4 --------------------------------------------------------------
+			/*function pBuilder(a,b) {
+				var e1 = document.createElement("p") ;
+					e1.textContent = a ;
+					
+				var e2 = document.createElement("p") ;
+					e2.textContent = b ;
+					
+				document.getElementById("pBox").append(e1) ;
+				document.getElementById("pBox").append(e2) ;
+			}
+	
+			pBuilder("dogs", "cats") ; */
+			
+			//Code for Question #8 ---------------------------------------------------------------
+			function loadDiv() {
+				var newDiv = document.createElement("div") ; 
+					newDiv.textContent = "This is a DIV" ;
+				
+				document.getElementById("bigDiv").append(newDiv) ;
+			}
+			
+		</script>
+	</body>
+</html>
