@@ -1,0 +1,100 @@
+<html>
+	<head>
+	</head>
+	
+	<body>
+		<div id="textMovieDiv" class="inputDiv">
+			<h2>Enter or Select a Movie Title</h2>
+			<input type="text" id="textMovie" name="movie" placeholder="Night at the Museum" />
+			<button id="textBtn" value="submitText">Submit<button>
+		</div>
+		
+		<div id="dropMovieDiv" class="inputDiv">
+			<select id="dropMovie" name="movie">
+				<option value="Star Wars">Star Wars</option>
+				<option value="The Empire Strikes Back">The Empire Strikes Back</option>
+				<option value="Return of the Jedi">Return of the Jedi</option>
+			</select>
+			<button id="dropBtn" value="submitDrop">Submit<button>
+		</div>
+		
+		<div id="resultBox">
+			<h4>Title:</h4><p id="resultTitle"></p>
+			<h4>Director:</h4><p id="resultDirector"></p>
+			<h4>Plot:</h4><p id="resultPlot"></p>
+			<h4>Actors:</h4><p id="resultActors"></p>
+			<h4>Movie Poster:</h4>
+			
+		</div>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		
+		<script>
+			var title;
+			
+			function searchNshow() {
+				var titleSplit = title.split(" ");															//SPLITS TITLE BY SPACES AND TURNS IT INTO AN ARRAY
+				var titleAPI = '';																			//BLANK VARIABLE TO BE USED FOR API SEARCH
+				
+				for (x=0 ; x < titleSplit.length ; x++) {													//WHILE X IS LESS THAN THE LENGTH OF THE TITLE ARRAY
+					if (x<=titleSplit.length-2) {															//IF X IS NOT THE LAST ITEM IN THE ARRAY
+						titleAPI = titleAPI + titleSplit[x];												//ADD THE ITEM AT THAT X INDEX TO THE API VARIABLE
+						titleAPI = titleAPI + '+';															//ADD A PLUS SIGN - FORMATTING THE TITLE TO BE USED IN A URL
+					}
+					else{titleAPI = titleAPI + titleSplit[x];}												//IF X IS ON THE LAST ITEM IN THE ARRAY, DON'T ADD THE PLUS AFTER
+				}
+			
+				//1. search api for movie info
+				fetch('http://www.omdbapi.com/?apikey=b174b83&t='+titleAPI+'&y=&plot=full&r=json')
+				
+				//2. save/return the info as a json															//GRABS THE RESPONSE AND RETURNS IT AS A JSON
+				.then(function(response) {return response.json();})
+				
+				//3. assign parsed json movie info to variables
+				.then(function(json){																		//SET JSON VALUES TO VARIABLES
+					var title = json.Title;
+					var director = json.Director;
+					var plot = json.Plot;
+					var actors = json.Actors;
+					var poster = json.Poster;
+					
+				//4. display those variables in the coorresponding p elements								//ASSIGNS THOSE VARIABLES TO P ELEMENTS IN RESULT BOX
+					$("#resultTitle").text(title)
+					$("#resultDirector").text(director)
+					$("#resultPlot").text(plot)
+					$("#resultActors").text(actors)
+					
+					var parent = document.getElementById('resultBox');										//SET RESULT BOX DIV TO VARIABLE (1ST - DOM) FOR NODE TYPE
+					var child = parent.lastChild;															//ASSIGN LAST CHILD ELEMENT IN DIV TO VARIABLE (1ST -DOM)
+					var elType = child.nodeName;															//NODE NAME (ELEMENT TYPE) OF LAST CHILD ELEMENT
+					
+					if (elType == '#text'){																	//IF THE LAST ELEMENT IN THE DIV IS TEXT
+						$("#resultBox").append('<img src="'+poster+'" alt="movie poster"></img>');			//ADD THE MOVIE POSTER
+					}
+					else{																					//IF THE LAST ELEMENT IN THE DIV IS NOT TEXT
+						var parentJQ = document.querySelector("#resultBox");								//SET RESULT BOX DIV TO VARIABLE (2ND - QUERY) TO REMOVE CHILD
+						var childJQ = parentJQ.lastChild;													//ASSIGN LAST CHILD ELEMENT IN DIV TO VARIABLE (2ND - QUERY)
+						parentJQ.removeChild(childJQ);														//REMOVE THE LAST CHILD (FORMER MOVIE POSTER)
+						$("#resultBox").append('<img src="'+poster+'" alt="movie poster"></img>');			//ADD THE NEW MOVIE POSTER
+					}
+				});
+			}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------//
+			
+			$("#textBtn").click(function(){																	//FUNCTION FOR TEXT ENTRY BUTTON TO SET TITLE
+				title = $("#textMovie").val();																//SET TITLE
+				searchNshow();																				//CALL FUNCTION TO PERFORM REQUIRED TASKS
+			})
+			
+//----------------------------------------------------------------------------------------------------------------------------------------------------------//
+			
+			$("#dropBtn").click(function(){																	//FUNCTION FOR DROP DOWN BUTTON TO SET TITLE
+				title = $("#dropMovie").val();																//SET TITLE
+				searchNshow();																				//CALL FUNCTION TO PERFORM REQUIRED TASKS
+			})
+			
+			
+		</script>
+	</body>
+</html>
