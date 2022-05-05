@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+/*
+	ITD212 Interactive Web Design
+	Development Assignment 1
+
+	Author: Alissa Hardison
+	Date: 07 November 2019
+  
+	Filename: hardison_dev1_single_styles.css
+	
+	This file contains the styles for hardison_dev1_single.html
+*/
+
+/*BODY STYLES*/
+div#inputs {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+/*INPUT STYLES*/
+
+div.pageInputs {
+	display: block;
+	float: left;
+	clear: both;
+	padding: 10px 5px;
+}
+
+div#taxLiab {
+	display: block;
+	clear: both;
+}
+
