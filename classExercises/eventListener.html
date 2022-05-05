@@ -1,0 +1,38 @@
+<html>
+	<body>
+		
+		<!---------------------------EXAMPLE ONE---------------------------------------->
+		<p id="demo"></p>
+		<button id="btnTest">Test</button>
+		
+		<!---------------------------EXAMPLE TWO---------------------------------------->
+		<p id="demo1"></p>
+		<p id="demo2"></p>
+		<button id="btnTest1">Test</button>
+		
+		<script>
+		
+		//---------------------------EXAMPLE ONE---------------------------------------//
+		document.getElementById("btnTest").addEventListener("click", displayText);
+		
+		function displayText(){
+		document.getElementById('demo').innerHTML="This is text from the button";
+		}
+		
+		//---------------------------EXAMPLE TWO---------------------------------------//
+		
+		document.getElementById("btnTest1").addEventListener("click", displayText1);
+		document.getElementById("btnTest1").addEventListener("click", displayDate);
+		
+		function displayText1(){
+		document.getElementById('demo').innerHTML="This is text from the button";
+		}
+		
+		function displayDate(){
+		document.getElementById('demo2').innerHTML=Date();
+		}
+		
+		</script>
+		
+	</body>
+</html>

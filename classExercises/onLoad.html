@@ -1,0 +1,21 @@
+<html>
+	<body onload="loadClass()">
+	
+		<p id="demo"></p>
+		<button onclick="addClass()">Add Class</button>
+	
+		<script>
+		function loadClass(){
+		document.getElementById("demo").innerHTML = "<ol id='classList'><li>ITP 100</li><li>ITP 226</li><li>ITD 212</li></ol>";
+		}
+
+		function addClass(){
+		var node = document.createElement("li");
+		node.appendChild(document.createTextNode("ITN 109"));
+		document.getElementById("classList").appendChild(node);
+		}
+		</script>
+		
+	</body>
+	
+</html>

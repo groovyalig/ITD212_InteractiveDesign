@@ -1,0 +1,29 @@
+<html>
+	<body>
+		
+		<input type="text" id="text1" placeholder="Enter Text">
+		<input type="number" id="num1" placeholder="Enter Number">
+		<input type="text" id="text2" placeholder="Enter More Text">
+		
+		<button id="btn">Submit</button>
+		
+		<div id="t1"></div>
+		<div id="n1"></div>
+		<div id="t2"></div>
+		
+		<script>
+			document.getElementById("btn").addEventListener("click", display);
+			
+			function display() {
+				var text1_d = document.createElement("p").textContent=("Text Box 1: " + document.getElementById("text1").value);					
+				var num1_d = document.createElement("p").textContent=("Number: " + document.getElementById("num1").value);
+				var text2_d = document.createElement("p").textContent=("Text Box 2: " + document.getElementById("text2").value);
+				
+				document.getElementById("t1").textContent=(text1_d);
+				document.getElementById("n1").textContent=(num1_d);
+				document.getElementById("t2").textContent=(text2_d);
+			}
+			
+		</script>
+	</body>
+<html>

@@ -1,0 +1,17 @@
+<html>
+	<body>
+		<a id="demo" href="https://www.tcc.edu">tcc.edu</a>
+		<p id="pSection"></p>
+		
+		<script type="text/javascript">
+		//adds event listener to anchor element, when mouse is over, displayText
+		document.getElementById("demo").addEventListener("mouseover", displayText);
+		
+		//changes inner HTML of p element to an h1 that says "testing"
+		function displayText() {
+			document.getElementById("pSection").innerHTML='<h1>Testing</h1>';
+		}
+		
+		</script>
+	</body>
+</html> 

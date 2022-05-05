@@ -1,0 +1,35 @@
+<html>
+
+	<!--
+		CREATING A NEW ELEMENT, ASSIGNING ITS VALUE, AND INSERTING BEFORE ANOTHER ELEMENT
+	-->
+	
+	<body>
+		<p id="p1">This is a paragraph</p>
+		
+		<script>
+			//create a new element and assign its value
+			var newElement = document.createElement("p")
+				newElement.textContent = "This is a dynamic paragraph."
+			
+			//create a reference element from the existing paragraph
+			var p1 = document.getElementById("p1")
+			
+			//insert the newElement before the existing p1 element
+			document.body.insertBefore(newElement, p1)
+			
+			/* PROFESSORS SOLUTION: ------------------------------------------------------------------------------------------
+			
+			var new = document.createElement("p");										--creates new element
+			new.id = "p2";																--assigns id to new element
+			
+			var content = document.createTextNode("This is a dynamic paragraph");		--creates node for text
+			new.appendChild(content);													--adds node to new element
+			
+			var old = document.getElementById("p1");									--gives original p a variable name
+			document.body.insertBefore(new, old)										--inserts new element before old
+			--------------------------------------------------------------------------------------------------------------- */
+			
+		</script>
+	</body>
+</html>
