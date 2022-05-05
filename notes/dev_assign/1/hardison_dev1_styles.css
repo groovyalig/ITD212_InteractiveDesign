@@ -1,0 +1,179 @@
+@charset "utf-8";
+
+/*
+	ITD212 Interactive Web Design
+	Development Assignment 1
+
+	Author: Alissa Hardison
+	Date: 07 November 2019
+  
+	Filename: hardison_dev1_styles.css
+	
+	This file contains the styles for the header, footer,
+	background, and other general elements that are consistent
+	throughout the development assignment html docs
+*/
+
+/* --- HTML AND BODY STYLES --- */
+
+html {
+	background:rgba(135, 216, 236, 0.9);
+	font-family: serif;
+	height: 100%;
+}
+
+body {
+	background-color: white;
+	box-shadow: rgb(138,134,98) 10px 0px 20px,  rgb(138,134,98) -10px 0px 20px;
+	border-left: 2px solid rgb(138,134,98);
+	border-right: 2px solid rgb(138,134,98);
+	min-height: 100%;  
+	margin: 0px auto;
+	min-width: 320px;
+	max-width: 1020px;  
+	width: 100%;
+}
+
+/* -------- HEADER STYLES -------- */
+
+header {
+	display: block;																							/*CHANGES DISPLAY TYPE*/
+	width: 100%;																							/*HEADER=100% OF THE BODY'S WIDTH*/
+	background: linear-gradient(to bottom, rgba(135, 216, 236, 0.5) 45%, rgba(255,234,105, 0.9));			/*BACKGROUND FADES BLUE TO YELLOW*/
+	border-bottom: 1px solid rgb(0, 0, 0);																	/*BORDER ALONG BOTTOM OF HEADER*/
+	color: black;
+}
+
+header nav a {
+	display: none;																							/*DO NOT SHOW THE MOBILE MENU ICON*/
+}
+
+header nav ul {
+	list-style-type: none;																					/*REMOVE THE DISCS IN FRONT OF THE MENU ITEMS*/
+}
+
+header nav ul li {
+   font-size: 1.2em;																						/*CHANGE FONT SIZE*/
+   line-height: 2em;																						/*CHANGE HEIGHT OF TEXT LINE*/
+   vertical-align: center;																					/*ALIGN VERTICALLY TO THE CENTER*/
+   height: 1.5em;																							/*CHANGE HEIGHT OF LIST ITEM ELEMENT*/
+   width: 20%;																								/*EACH LIST ITEM WIDTH=20% OF HEADER WIDTH*/
+   margin: 4px auto;																						/*MARGIN OF 4PX ON TOP AND BOTTOM, AUTO ON SIDES*/
+}
+
+header nav ul li a {
+	display: block;																							/*CHANGES DISPLAY TYPE*/
+	color: black;																							/*FONT COLOR IS WHITE IN HEADER LIST ITEM ANCHOR ELEMENTS*/
+	width: 100%;																							/*ANCHOR ELEMENT THAT CONTAINS TEXT=100% WIDTH LIST ITEM ELEMENT*/
+	text-transform: uppercase;																				/*MAKE TEXT UPPERCASE*/
+	text-decoration: none;																					/*REMOVE THE UNDERLINE THAT OCCURS WITH ANCHOR ELEMENT*/
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;																				/*WHEN YOU HOVER OVER MENU ITEMS THEY GET UNDERLINED*/
+}
+
+/* -------- FOOTER STYLES -------- */
+
+footer {
+	display: block;																							/*CHANGES DISPLAY TYPE*/
+	width: 100%;																							/*FOOTER IS FULL WIDTH OF BODY ELEMENT*/
+	max-width: 1020px;																						/*PREVENT FOOTER FROM EXTENDING BEYOND BODY ELEMENT*/
+	color: black;  																							/*FONT COLOR IS WHITE IN FOOTER*/
+	background: linear-gradient(to bottom, rgba(255,234,105, 0.7) 30%, rgba(135, 216, 236, 0.6));			/*BACKGROUND FADES FROM YELLOW TO BLUE*/
+	border-top: 1px solid rgb(0, 0, 0);
+	position: absolute;
+	bottom: 0;
+}
+
+footer::after {																								/*TO PREVENT CONTAINER COLLAPSE WE ADD PSEUDO ELEMENT*/
+	clear: both;
+	content: "";
+	display: table;
+}
+
+footer div#footInfo {																						/*STYLES FOR DIV WITH CLASS INFO IN FOOTER*/
+	display: block;																							/*CHANGE DISPLAY TYPE TO BLOCK*/
+	float: left;																							/*FLOAT THE DIV TO THE LEFT OF THE CONTAINER*/
+	margin: 0.2em 0.8em;																					/*SET THE MARGINS, 0.2em TOP/BOTT & 0.8em SIDES*/
+	width: 40%;																								/*WIDTH OF DIV SET TO 60%*/
+	font-size: 0.85em;																						/*FONT SIZE IS 0.85em SO SHOULD CHANGE SIZE WITH PAGE CONTENT*/
+	line-height: 0.5em;																						/*LINE HEIGHT SHOULD CHANGE WITH PAGE CONTENT*/
+}
+
+footer ul#footNav {
+	display: block;																							/*CHANGE DISPLAY TYPE TO BLOCK*/
+	float: right;																							/*PUSH THE DIV TO THE RIGHT OF THE CONTAINER*/
+	list-style-type: none;																					/*REMOVE THE DISCS IN FRONT OF THE MENU ITEMS*/																					
+	margin: 1em;																							/*SET THE MARGINS ALL AROUND TO */
+}
+
+footer ul#footNav li {
+	display: block;																							/*CHANGE DISPLAY TYPE TO BLOCK*/
+	font-size: 0.7em;																						/*CHANGE FONT SIZE*/
+	line-height: 1em;																						/*CHANGE HEIGHT OF TEXT LINE*/
+	vertical-align: right;																					/*ALIGN VERTICALLY TO THE CENTER*/
+	height: 1em;																							/*CHANGE HEIGHT OF LIST ITEM ELEMENT*/
+	width: 20%;																								/*EACH LIST ITEM WIDTH=20% OF HEADER WIDTH*/
+	text-transform: uppercase;																				/*CAPITALIZE TEXT*/
+}
+
+footer ul#footNav li a:visited, footer ul#footNav li a:link {												/*WHEN FOOTER LINK HAS BEEN VISITED AND BEFORE IT'S BEEN CLICKED*/
+	color: black;																							/*TEXT COLOR IS BLACK*/
+	text-decoration: none;																					/*REMOVE DEFAULT UNDERLINE FOR LINKS*/
+}
+
+footer ul#footNav li a:hover, footer ul#footNav li a:active {												/*WHEN A FOOTER LINK IS BEING HOVERED OVER OR IS LOADING*/
+	color: black;																							/*TEXT COLOR IS BLACK*/
+	text-decoration: underline;																				/*ADD UNDERLINE TO TEXT*/
+}
+
+
+
+/* ===============================
+   Mobile Styles: 0px to 640px 
+   ===============================
+*/
+@media only screen and (max-width: 640px) {																	/*FOR DEVICES USING A SCREEN UP TO 640PX WIDE*/
+
+   a#navicon {																								/*HIDDEN IMAGE IN HEADER FOR MOBILE DROPDOWN MENU*/
+      display: block;																						/*SHOW IMAGE IF IN MOBILE VIEW*/
+   }
+   
+   header nav ul {																							/*HEADER NAV LIST*/
+      display: none;																						/*HIDE LIST FROM VIEW*/
+   }
+   
+   header nav ul li {																						/*HEADER NAV LIST ITEMS*/
+      font-size: 1em;																						/*SET FONT SIZE*/
+      line-height: 1.3em;																					/*SET LINE HEIGHT OF LIST ITEM*/
+      height: 1.3em;																						/*SET HEIGHT OF CONTAINER*/
+   }
+   
+   a#navicon:hover+ul, header nav ul:hover {																/*WHEN YOU CLICK THE NAV ICON*/
+      display: block;																						/*CHANGE DISPLAY OF ICON AND NAV LIST TO BLOCK*/
+   }
+   
+}
+
+/* =============================================
+   Tablet and Desktop Styles: greater than 640px
+   =============================================
+*/
+@media only screen and (min-width: 641px) {																	/*FOR DEVICES WITH A SCREEN GREATER THAN 640PX WIDE*/
+
+   body header nav ul {																						/*HEADER NAV LIST*/
+      display: -webkit-flex;																				/*FLEXIBLE DISPLAY - WEBKIT NEEDED FOR CERTAIN BROWSERS*/
+      display: flex;																						/*FLEXIBLE DISPLAY*/
+      -webkit-flex-flow: row nowrap;																		/*CHANGE TEXT FLOW - WEBKIT NEEDED FOR CERTAIN BROWSERS*/
+      flex-flow: row nowrap;																				/*CHANGE TEXT FLOW*/
+      -webkit-justify-content: center;																		/*CENTER CONTENT - WEBKIT NEEDED FOR CERTAIN BROWSERS*/
+      justify-content: center;																				/*CENTER CONTENT*/
+   }
+   
+   body header nav ul li {																					/*HEADER NAV LIST ITEMS*/
+      -webkit-flex: 0 1 auto;																				/*MAKE FLEXIBLE - WEBKIT NEEDED FOR SOME BROWSERS*/
+      flex: 0 1 auto;																						/*MAKE FLEXIBLE*/
+   }
+}
+
