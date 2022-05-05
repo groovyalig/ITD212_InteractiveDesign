@@ -1,0 +1,18 @@
+{
+  "name": "devassign3_init",
+  "version": "1.0.0",
+  "description": "node init pkg for devassign3 html file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "development",
+    "assignment"
+  ],
+  "author": "Alissa Hardison",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
