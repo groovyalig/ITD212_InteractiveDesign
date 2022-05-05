@@ -1,0 +1,107 @@
+UNIT 11 NOTES 
+
+res.sendFile(directoryName + '/index.html')
+  sends file as response using exress
+
+
+
+HIT CTRL + C TO STOP RUNNING NODE
+
+
+//--------------------------------------------------------------
+
+create folder
+
+cd c:/...
+  change directories
+
+npm init
+  create something in folder/directory
+
+npm install express -save
+
+create js doc in directory - this file, when run, tells the computer to display another page
+create html doc in directory - this is the page being sent as a response
+
+
+node is scalable, express it doesnt matter
+
+CRUCIAL CODE : 
+	******	var express = require('express'); var app = express();									// CREATES AN EXPRESS APPLICATION
+		app.use(function(req,res,next) {
+		    res.header("Access-Control-Allow-Origin", "");
+		    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+		    next();});
+		app.get('/', function (req,res){
+		    res.sendFile(__dirname + '/index.html')});
+		app.listen(3001, function(){
+		    console.log('Listening on port 3001)});
+
+//--------------------------------------------------------------------------------------------------------------//
+
+MONGO DB
+keeps data in central location in standardized format
+2 Types: 
+	relational(tables with fields & touples, use 'keys' to relate one another), 
+	non-relational aka NO SQL [social media is accerdited with creating these] (store data in key value pairs - called bson, is like json)
+
+MONGO DB
+open source, document-oriented (key value pairs), scalable automatically
+
+**abstraction usually method oriented, simplifying code for the user(/developers)
+
+database -> collection -> documents
+TCC -> Students/Faculty.. -> key value pairs
+
+//-----------------------------------------------------------------------------------------------------------------//
+create folder in c:/ needed to save files onto computer
+inside data folder create db folder
+c:/data/db
+
+open regular (Windows command prompt), change directory to where monogd.exe is located (program files)
+type mongod.exe to run mongo, minimize window
+**cannot type into, but must be running to access mongodb
+
+open regular (Windows command prompt), change directory to where monog.exe is located (program files)
+type mongo.exe to run mongo
+**allows for input
+
+*********************************************************************************************************************
+show dbs - shows all databases you have on your machine 
+
+db - shows database youre working in, if not in one, it creates one called test
+
+use - a command used to create/switch databases // show dbs will not show dbs until they have data in them
+	i.e. use testing
+
+db.createCollection("nameOfNewCollection") - creates a collection, response in command prompt is bson {"ok":1}
+	*collections are created automatically when you create/insert data/documents
+
+CRUD DATABASES ----------------------------------
+CREATE - we can create data we want to store	|
+READ - we can read data we have created		|
+UPDATE - we can update data in the database	|
+DELETE - we can delete data in the database	|
+
+if you want to store data, first thing you type is db then collection you want to store data in
+then a period and the collection followed by the method
+i.e. db.testing.save()
+
+
+
+db.collection.save() - lets us save data into the database ; 
+db.collection.find() - used to pull/read data
+	- 1. open find = nothing in parentheses = pulls back all the data in a database
+	- 2. allows us to find the collection/document where that key value pair is true
+db.collection.update({parameter1:what I'm looking for}, {parameter2:new value for all results}) 
+	- CAN ONLY BE USED TO CHANGE ENTIRE DOCUMENT, NOT AN INDIVIDUAL KEY-VALUE PAIR
+	-nMatched = how many results matched 
+	-nModified = how many were updated (does not always match nMatched)
+db.collection.remove({})
+	- 1. open remove = nothing in parentheses = empties collection
+	- 2. allows us to find the collection/document where that key value pair is true and delete it
+
+
+
+
+

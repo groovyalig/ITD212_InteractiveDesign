@@ -1,0 +1,48 @@
+Unit 8 
+10/24/2019
+
+NPM
+-Node Packet Manager
+ used to install packages r modules of code into developers' projects
+ centrally located, so developers can get them from one place
+ packages/modules that contain reuseable code for developers
+ 
+ comes with Node.js automatically
+ ***Express.js *Gulp.js *Mongoose.js
+ https://www.npmjs.com/
+ to view which version of NPM you have, open Node.js command prompt and type 'npm-v'
+ to get the latest version of NPM opne your Node.js command prompt and type 'npm install npm@latest-g'
+ to install packets/modules type in the command prompt 'npm install PackageName -save'
+  **be sure to change your directory before installing because that's where the files will be downloaded
+ when a package is installed it wil create a node_modules directory in your current directory
+ 
+to manage the packages you install, use a package.json file
+  **allows you to document all of the packages and versions your project is using
+type 'npm init' & hit enter , it walks you through creating the file
+name, version, description, **entry point(this is the starting point to a project/program), test command, git repository, keywords, author, license
+
+Project Creating Process
+1. Create Folder
+2. Change the directory to the folder  (in node.js command prompt)
+3. create package.json file 
+4. install packages
+5. create entry point file
+
+Full Web Dev Stack
+Mongo DB = database 
+Express = web based server-side code platform
+Angular = front end / GUI / user interfaces
+Node = infrastructure / framework for the server
+
+Routing---
+describes how an ap responds to a client request
+-the URL passed and the request method determine how routing occurs
+  -request method: GET(req data), POST(submits data), etc.
+format: app is an instnce of express, method is the http req. method, path is the location on the server, handler is the function that is executed when the path and mehtod are matched
+app.METHOD(PATH, HANDLER)
+
+TO TEST YOUR NODE IN THE BROWSER TYPE localhost:port\
+
+static page
+use the express.static function
+i.e. app.use(express.static('pages'));

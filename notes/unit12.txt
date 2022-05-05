@@ -1,0 +1,30 @@
+CHAPTER 12 NOTES
+Alissa Hardison
+21 November 2019
+
+USING MONGODB W EXPRESS
+1. add MongoDB package in your express folder
+2. add it to your express code file
+3. connect to db unsing .connect() method
+
+_id
+identifier for a db document
+(like id attribute for elements)
+usually assigned by an index
+can be manually entered, but not recommended
+
+findOne method
+use find() to find an item in mongoDB
+-this usually returns all of the documents in the collection
+-we usually return these as an array and must loop through 
+	the array in order to access the documents
+use findOne() to find a single document
+ - db.collection.findOne() returns the first document
+		.findOne({'name':'Alissa'}) returns first instance that
+		   meets that criterion
+
+MULTIPLE ROUTES
+This can be used to perform multiple http requests of the same type
+	ex. http://localhost:3001/test
+	ex. http://localhost:3001
+	this can be used to serve multiple responses

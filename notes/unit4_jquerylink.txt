@@ -1,0 +1,51 @@
+UNIT 4 Notes
+
+Objectives: 
+	1. Use Chrome DevTools to debug JavaScript
+	2. Utilize jQuery to create Web Pages
+
+*CHROME DEV TOOLS*
+	-Debugging tools (Press F12)
+	*ELEMENTS*
+		allows you to view DOM elements and their attributes
+		can select elements individually
+	*SOURCES*
+		used to debug JS
+		*Console Drawer*
+			to launch press 'esc' key ;
+			code written in here executes and can be recorded
+				i.e. parseint(addend1) + parseint(addend2)
+		*Code Editor*
+			used to make changes once you determine the issue
+			make any changes then click 'ctrl + s'
+			^ only updates code in browser, not at server level
+
+*JQUERY*
+	A JS library designed to make DOM manipulation, ajax interactions, and animating easier
+	- https://jquery.com/
+		consists of functions we use to simplify things
+
+	*to use jQuery, add the libraries to your pages
+	- download the file and place it in a folder
+	- or link to: https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js
+		   or https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js
+	
+	TO ACCESS JQUERY USE: $("")
+	1. inside the double quotes, select the element you want to work with
+	i.e. $("#p1") //# to select an element by its id //. to select an element by its class
+	2. after you select an element, you specify an action
+	
+	Setting Values of Elements
+	use '.text()' to set the text of an element
+	use '.html()' to set the html of an element
+
+	*EVENTS*
+	Most DOM events have cooresponding jQuery events
+	Difference: you must pass a function to the event to handle the event
+		i.e. $("btnSubmit").click(function(){$("p").hide})
+
+	.append() - will add an item to the end of an element
+	.remove() - will remove an element
+	.val() - the value within a certain element
+
+*200 is the code for ok on computers w/ http requests

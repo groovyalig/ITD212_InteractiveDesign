@@ -1,0 +1,26 @@
+app.get ('/', function (req, res){
+	//this html var has to have all code for the form
+	var html = '<form action="" method=""><input name="usr" type="text"/><input name="pwd" type="password"/><input type="submit"></form>'
+
+	res.send(html);
+});
+
+app.post ('/', function (req,res){									//req in this case is the user and password
+	var username = req.body.usr;									//res would be either moving to the task feed or displaying an error
+	var password = req.body.pwd
+	
+	var html = 'Username = ' + usr + '<br />' + 'Password = ' + pwd;
+
+	res.send(html);
+});
+
+app.listen(4001, function(){
+	console.log('Listening on Port 4001');
+})
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+to add anchor element (create user) -> <a href="http://localhost:4001/createUser">CreateUser</a> then use app.get('/createUser', function(req,res){//create user form});
+

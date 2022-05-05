@@ -1,0 +1,49 @@
+Unit 6 Notes
+
+Geolocation
+-used to identify your location in web apps
+-done through use of GPS and latt/longitude coordinates
+-several APIs that deal with Geolocation
+-done using Wi-Fi, IP addresses, GPS hardware, and cell tower triangulation
+
+Geocodio API
+-works with lat/longitude and GoogleMaps API
+-converts addresses to GPS coordinates
+MY KEY: 55e314a3395fa3cc1fe91ad8ca8d55a5a95e8df
+
+Client/Server Side
+-Client side runs on client's device
+  -specifically for user interface
+-Server side runs on the server
+  -used for calculations, data access, transformation, and heavy performance and efficiency
+
+Node.js
+-a runtime environment used to build scalable network/server applications
+-built on top of Google Chrome V8 JS engine
+-based on an asynchronous event-driven, nonblocking I/O model
+	- asynchronous: deals with requests as if it's multitasking
+-Node.js platform can serve as a full web server similar to apache
+-Can run on several platforms including Windows, Linux, Mac OS X
+
+IN NODE.JS
+Command Prompt
+-cd = change directory
+	i.e. cd c:\Program Files\nodejs
+-dir = directory (shows all folders in current folder)
+In order to run something in node, you have to be 'pointing' to the folder that contains the file
+npm = node project manager
+
+require is how you add module/ argument is the module you want to add
+i.e. require('http') gives you web server code
+
+.createServer creates a server
+request and response are objects in node // i.e. function(request, response)
+
+.writeHead(code, json) = how you write the head/info not displayed
+response.end(what goes in body) = end of message
+*json = {"content-type": "text/plain"}
+
+.listen() = listens for requests so it can send responses
+		your argument in this case is the port that this code is running on
+
+console.log = how we write messages to the command line

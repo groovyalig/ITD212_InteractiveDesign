@@ -1,0 +1,71 @@
+10/3/2019 
+Unit 5 Class Notes
+
+JSON = JS Object Notation
+ * used to organize data for transfer and storage
+ * provides a standardized way to format data
+ * several technologies store data in HSON format instead of relational databases
+ * FORMAT: data in name/value pairs, commas separate the data, objects are delimited by curly braces, arrays use []
+	   "name":"value", "name":"value" ,... (name is almost always some sort of string)
+ * an Object is a collection of name, value pairs
+ * an Array is a collection of objects
+   If you want to group the name:value pairs to make an object -> {"school":"TCC", "prof":"Oliverio"}
+ * to make an array: 
+	"faculty":[{"name":"Ali","color":"green"},{"name":"Brad","color":"red"},{"name":"Josh","color":"orange"}]
+
+JSON and JavaScript
+ JS contains the JSON object which allows us to work with JSON uing JS
+ You can put '' quotes around an object to make it JSON or you can stringify it
+ 2 useful methods that allow us to do this: 
+	1. JSON.parse()		- reads a string and returns the values from the string
+		*used to turn JSON string into a diff type of object
+		*strips specific values so that we can use them
+		 i.e. JSON.parse(exampleJSON);
+		      document.getElementById("div1").innerHTML = parsedJSON.name
+
+	2. JSON.stringify()	- converts string to JSON for storage or sending
+		*used to convert JS object into JSON (i.e. arrays and objects)
+		*primarily used to convert JS to JSON that can be sent to a server for exchange information
+		 i.e. var obj = {"city":"VB", "state":"VA"};
+		      var convertedJSON = JSON.stringify(obj);
+
+API (Application Program Interface) - 
+ * govern how applications interact with each other
+ * allows Web Apps to reuse and access remote code (i.e. lets Waze use Google's map database)
+ * Often web services that return data in the form of JSON, etc.
+ * Usually contain functions/methods that can be called remotely by the web sites/apps
+   i.e. GPS, Weather, Stat Updates, cloud based services, etc.
+ 
+ Different Types of APIs: 
+	1. Native APIs
+	2. Third Party APIs
+
+ How do we use APIs?
+	XMLHTTPRequest is the JS function used to access APIs
+		- problems when going across domains because many servers don't allow it due to cross-site scripting attacks
+		    - these attacks allow attackers to insert malicious code on a server that will run on a users machine when they hit a site
+	fetch is used instead of XMLHTTPRequest now
+	HTTP Request Methods are used with APIs 
+		- GET method 
+		- POST method
+
+Storage
+ web storage API allows browsers to store key/value pairs (can be used instead of cookies)
+ TWO TYPES = 1. sessionStorage (avail. while page's session is open)
+	     2. localStorage (avail. even when the browser is closed and reopened)
+
+ localStorage = on hard drive
+	- has no expiration date ; persists even when browser closes
+	- useful when you have items that you need to save
+	- uses key value pairs
+	- use .setItem() to save to localStorage
+	- use .getItem() to retrieve data from localStorage
+	- use localStorage.clear() to clear the data
+
+ sessionStorage = in web page
+	- has an expiration date ; is cleared when the page session ends and browser is closed
+	- while browser is open, data can persist in sessionStorage
+	- use .setItem() to save data to sessionStorage
+	- use .getItem() to retrieve data from sessionStorage
+	- use sessionlStorage.clear() to clear the data
+
